@@ -1,3 +1,4 @@
+from knn import KNN
 import numpy as np
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
@@ -21,18 +22,17 @@ X_train, X_test, y_train, y_test = train_test_split(
 # plt.scatter(X[:, 2], X[:, 3], c=y, cmap=cmap, edgecolor='k', s=20)
 # plt.show()
 
-from knn import KNN
 
 k = 1
 clf = KNN(k=k)
 clf.fit(X_train, y_train)
 predictions = clf.predict(X_test)
-acc = np.sum(predictions == y_test) /  len(y_test)
+acc = np.sum(predictions == y_test) / len(y_test)
 print(f"Accuracy for k={k} : {acc:.2f}")
 
 k = 5
 clf = KNN(k=k)
 clf.fit(X_train, y_train)
 predictions = clf.predict(X_test)
-acc = np.sum(predictions == y_test) /  len(y_test)
+acc = np.sum(predictions == y_test) / len(y_test)
 print(f"Accuracy for k={k} : {acc:.2f}")
