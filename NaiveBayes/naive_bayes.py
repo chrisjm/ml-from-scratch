@@ -27,7 +27,7 @@ class NaiveBayes:
     def _predict(self, x):
         posteriors = []
 
-        for idx, c in enumerate(self._classes):
+        for idx, _ in enumerate(self._classes):
             prior = np.log(self._priors[idx])
             class_conditional = np.sum(np.log(self._pdf(idx, x)))
             posterior = prior + class_conditional
